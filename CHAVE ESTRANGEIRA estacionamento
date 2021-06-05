@@ -1,0 +1,5 @@
+use estacionamento;
+ALTER TABLE tb_carros 
+ADD CONSTRAINT fk_tb_contatos_tb_carros
+ FOREIGN KEY ( id_contatos ) 
+ REFERENCES tb_contatos ( id_contato ) ;
