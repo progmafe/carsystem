@@ -32,13 +32,9 @@ if(isset($_GET["inserir"]))
      {
 		while($array_select_carros=mysql_fetch_array($sql_select_carros))
 			{
-			  
 				    $placa1=$array_select_carros["placa"];
 					if ($placa1==$placa)
 					 $totplaca=$totplaca+1;
-					
-				 
-
 			}
 			
 	 }	

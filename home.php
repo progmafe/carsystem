@@ -28,7 +28,7 @@
 
  <div class="container">
 </br>
-	<h5><?php
+	<h5 style="color:#FFFFFF"><?php
 	require('logado.php');
 	echo "Olá! Seja Bem Vindo ".$_SESSION['usuario']['nome'];
 	?><h5>
@@ -80,5 +80,13 @@
     <span class="visually-hidden">Next</span>
   </button>
  </div>
+
+ <style>
+body 
+{
+	background-color:#212529;
+}
+</style>
+
  </body>
 </html>

@@ -60,8 +60,8 @@ if(isset($_POST["inserir"]))
     <input type="text" name="celular" id="celular" />
     <br />
     <input type="submit" name="inserir" id="inserir" value="Inserir" />
-<br />
-  </p>
+<br/>
+</p>
 </form>
 
 

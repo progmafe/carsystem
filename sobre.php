@@ -24,14 +24,25 @@
 			</li>  
 		</ul> 
 	</nav> 
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8"/>
+		<title> - - </title>
+		<style>
+	body
+	{	
+		background-color: #212529 ;		
+    color:#FFFFFF;
+	}
+	</style>
+<title>Sobre</title>
+</head>
+<body>
 
-
-	
 	<h4 style="margin-left: 100">Sobre</br><h4>
 	<h6 style="margin-left: 100; margin-right: 50px; ">	
-	Seja bem vindo ao Estacionamento da ETEC Fernando Prestes !
-	</br></br>
-	Um pouco da história da ETEC
+	HISTÓRIA DA ETEC FERNANDO PRESTES
 	</br></br>
   A “Fernando Prestes” foi criada pela Lei 1860, de 30.12.1921 e instalada em 09 de junho de 1929, 
   com a denominação de “Escola Profissional Secundária Mista de Sorocaba”, atualmente Escola Técnica Estadual “Fernando Prestes”. 
@@ -74,3 +85,6 @@
   resultantes das mudanças de legislação, de estrutura e de prédios. 
   Muitos profissionais se formaram na Escola Técnica, o espírito de pioneirismo e de dedicação de muitos que aqui trabalharam, acreditamos,
   vive até hoje no “Fernando Prestes”. <h6>
+
+</body>
+</html>

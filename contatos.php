@@ -33,8 +33,6 @@
 
  <?php
  require_once('conexao.php');
-
-
  $query_select_contatos="SELECT * FROM tb_contatos";
  $sql_select_contatos=mysql_query($query_select_contatos);
  if($sql_select_contatos == false)
@@ -50,21 +48,25 @@
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
  <title>Contatos</title>
  </head>
-
  <body>
 
- <ul>
-	<li><a href="inserir_contato.php">Inserir Contato</a></li>
- </ul>
- <table width="200" border="1" cellspacing="0" cellpadding="0">
-  <tr>
-    <td>Nome:</td>
-    <td>Sobrenome:</td>
-    <td>Email:</td>
-    <td>Telefone:</td>
-    <td>Celular:</td>
-    <td colspan="2">Ações</td>
-    </tr>
+ <table>
+ <div class="container">
+		<div class="row justify-content-center">
+			<div class="col">
+				<div class="d-grid gap-2">
+					<button class="btn btn-primary" type="button" style="background-color:maroon; border-color:maroon" onclick="window.location='inserir_contato.php'"><strong>CADASTRAR CONTATO</strong></button>							
+				</div>
+				<table class="table table-dark table-hover">
+                <tr style= "font-weight: bold">
+                <td>NOME:</td>
+                <td>SOBRENOME:</td>
+                <td>EMAIL:</td>
+                <td>TELEFONE FIXO:</td>
+                <td>CELULAR:</td>
+                <td colspan="2">AÇÕES</td>
+                </tr>
+			
 <?php  
  if(mysql_num_rows($sql_select_contatos) > 0)
  {
@@ -88,12 +90,21 @@
 	<td><a href=\"deletar_contato.php?id_contato=$id_contato\">Deletar</a></td>
   </tr>
   ";
-	}
+    }
  }
  ?>
-  </table>
+        </table>
+        </div>
+		</div>
+	  </div>
+	  
+ <style>
+body 
+{
+	background-color:#212529;
+}
+</style>
 
+   </body>
+</html>
 
-
-  </body>
-  </html>
