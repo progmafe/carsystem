@@ -1,6 +1,7 @@
 ﻿<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
 <?php
 error_reporting(0);
@@ -15,9 +16,7 @@ $PLA=0;
 if(isset($_GET["inserir"])) 
  {
     $query_select_carros="SELECT * FROM tb_carros";
-    $sql_select_carros=mysql_query($query_select_carros);
- 
- 
+    $sql_select_carros=mysql_query($query_select_carros); 
  
 	$placa=strtoupper($_GET["placa"]);
 	$cor=$_GET["cor"];
@@ -32,24 +31,23 @@ if(isset($_GET["inserir"]))
      {
 		while($array_select_carros=mysql_fetch_array($sql_select_carros))
 			{
+			  
 				    $placa1=$array_select_carros["placa"];
 					if ($placa1==$placa)
 					 $totplaca=$totplaca+1;
+					
 			}
 			
 	 }	
 	
 	if ($totplaca>=1)
 	
-   {
-	   echo"<script type=\"text/javascript\">alert('Atenção! Placa já cadastrada.');</script>";    
+    {
+	   echo"<script type=\"text/javascript\">alert('Atenção! Placa já cadastrada. ');</script>";    
 	   $PLA=1;
 		
     }   
-	
-	 	
-	 
-	 
+
 	IF ($PLA==0)
 	{
 	
@@ -71,7 +69,7 @@ function SomenteNumero(e){
     var tecla=(window.event)?event.keyCode:e.which;   
     if((tecla>47 && tecla<58)) return true;
     else{
-    	if (tecla==8 || tecla==0) return true;    
+    	if (tecla==8 || tecla==0) return true;     // 8 backspace e 0 null
 	else  return false;
     }
 }
@@ -109,89 +107,102 @@ function validaPlaca(placa)
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Cadastro de carros</title>
-</head>
+	<head>
 
-<body>
-<h1>CADASTRAR CARRO</h1>
-<ul>
-	<li><a href="carros.php">Mostrar carros cadastrados</a></li>
-</ul>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Cadastro de Carros</title>
+	</head>
+
+		<body>
+		<h3 style="margin-left:500">CADASTRAR CARRO</h3>
+		<ul>
+			<a href="carros.php" style="margin-left:500; color:#FFFFFF">Mostrar Carros Cadastrados</a>
+		</ul>
 
 
-<form id="form_carro" name="form_carro" method="GET" action="">
-  <p>
-  
- 
-  
-  
-    <label for="placa">Placa:</label>
-    <input type="text" name="placa" id="placa" onblur=validaPlaca(this.value) placeholder="Digite a placa" />
-    <br />
-	<label for="cor">Cor:</label>
-  	<input type="text" name="cor" id="cor" placeholder="Digite a cor " pattern="[A-Z\s]+$"><br />
-	 <label for="marca">Marca:</label>
-    <input type="text" name="marca" id="marca"  placeholder="Digite a marca" required="required"   />
-    <br />
-    <label for="montadora">Montadora:</label>
-    <input type="text" name="montadora" id="montadora"  placeholder="Digite a montadora" required="required"  pattern="[A-Z\s]+$" />
-    <br />
-    <label for="combustivel">Combustível</label>
-	
-	<select name="combustivel" id="combustivel">
-	         <option value="Gasolina">Gasolina</option>
-			 <option value="Alcool">Alcool</option>
-			 <option value="Diesel">Diesel</option>
-	</select>
-	
-	 <br />
-   
-    <label for="ano">Ano</label>
-    <input type="text" name="ano" id="ano" onkeypress='return SomenteNumero(event)'placeholder="Digite o ano do carro"><br />
-	<label for="id_contato">Código do Contato</label>
-	
-	
-	<select name="id_contato" id="id_contato">
-	
-	
-<?php
-     
-	     
-	  
-		$query_select_contatos="SELECT id_contato,nome FROM tb_contatos";
-		$sql_select_contatos=mysql_query($query_select_contatos);
+		<form id="form_carro" style="margin-left:500" name="form_carro" method="GET" action="">
 		
-		if(mysql_num_rows($sql_select_contatos) > 0)
-			{
-			   while($array_select_contatos=mysql_fetch_array($sql_select_contatos))
-			  
-			  {
-					
-					
-					
-					 
-					$id_contato=$array_select_contatos["id_contato"];
-					$nome=$array_select_contatos["nome"];
-					echo '<option value="'; echo  $array_select_contatos["id_contato"]; 
-					echo '">'; echo $array_select_contatos["nome"];
-                    echo '</option>';
-					
-               
-			 
-				}
-			   
-			}
-      echo '</select> '; echo '<br>'; ?>
+		<div  class="container">
+			
+			<div class="row align-items-start">			
+			<div class="col-sm-4">
+				<label for="placa" class="form-label">Placa</label><br />
+				<input type="text" style="border-radius:10px" name="placa" id="placa" onblur=validaPlaca(this.value) placeholder="Digite a placa" />
+			</div>			
+			
+			<div class="col align-self-center">
+				<label for="cor" class="form-label">Cor</label><br />
+				<input type="text"style="border-radius:10px" name="cor" id="cor" placeholder="Digite a cor " pattern="[A-Z\s]+$"><br />
+			</div>			
+			</div>
+			<br />
+			
+			<div class="row align-items-center">
+			<div class="col-sm-4">
+				<label for="marca" class="form-label">Marca</label><br />
+				<input type="text"style="border-radius:10px" name="marca" id="marca"  placeholder="Digite a marca" required="required"   />
+			</div>	
+			
+			<div class="col align-self-center">			
+				<label for="montadora" class="form-label">Montadora</label><br />
+				<input type="text"style="border-radius:10px" name="montadora" id="montadora"  placeholder="Digite a montadora" required="required"  pattern="[A-Z\s]+$" />
+			</div></div>
+			<br />
+			
+			<div class="row align-items-center">
+			<div class="col-sm-6">
+			<label for="combustivel" class="form-label">Combustível</label><br />
+				<select style="border-radius:10px" name="combustivel" id="combustivel" class="form-select">				
+				<option selected="Gasolina">Gasolina</option>
+				<option selected="Alcool">Alcool</option>
+				<option selected="Diesel">Diesel</option>
+				</select>
+			</div>
+			</div>
+			<br/>
+			<div class="row justify-content-start">
+			<div class="col-sm-4">
+				<label for="ano" class="form-label">Ano</label><br />
+				<input type="text" style="border-radius:10px" name="ano" id="ano" onkeypress='return SomenteNumero(event)'placeholder="Digite o ano do carro">
+			</div>
+			
+			<div class="col-sm-4">
+				<label for="id_contato" class="form-label">Nome</label><br />
+				<select style="border-radius:10px" name="id_contato" id="id_contato">
+			</div>
+			</div>
+		</div>
+		
+		<?php
+				$query_select_contatos="SELECT id_contato,nome FROM tb_contatos";
+				$sql_select_contatos=mysql_query($query_select_contatos);
+				
+				if(mysql_num_rows($sql_select_contatos) > 0)
+					{
+					   while($array_select_contatos=mysql_fetch_array($sql_select_contatos))
+					  
+					    { 
+							$id_contato=$array_select_contatos["id_contato"];
+							$nome=$array_select_contatos["nome"];
+							echo '<option value="'; echo  $array_select_contatos["id_contato"]; 
+							echo '">'; echo $array_select_contatos["nome"];
+							echo '</option>';
+								 
+						}
+					   
+					}
+				echo '</select> '; echo '<br>'; 
+		?>
 
-    <br />
-    <input type="submit" name="inserir" id="inserir" value="Inserir" />
-<br />
-  </p>
-</form>
-
-
-
+			<br />
+			<input type="submit" style="border-radius:10px; background-color:#FFFFFF" name="inserir" id="inserir" value="Inserir" />
+		<br />		  
+<style>
+body 
+{
+	background-color:#212529;
+	color:#FFFFFF;
+}
+</style>
 </body>
 </html>

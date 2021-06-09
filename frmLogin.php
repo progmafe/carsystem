@@ -8,7 +8,7 @@
 body {
 	background-image: url("imagem/fundo.gif");
 	background-attachment: fixed ;
-	background-size: 86% ;
+	background-size: 100% ;
 	background-repeat: repeat ;		
 		    
 }

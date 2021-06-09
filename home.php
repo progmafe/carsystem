@@ -28,7 +28,7 @@
 
  <div class="container">
 </br>
-	<h5 style="color:#FFFFFF"><?php
+	<h5 style="color:#FFFFFF; margin-left:400px"><?php
 	require('logado.php');
 	echo "Olá! Seja Bem Vindo ".$_SESSION['usuario']['nome'];
 	?><h5>
@@ -36,8 +36,9 @@
  <style>
  .carousel-inner img
  {
-  width: 280px;
+  width: 20px;
   height: 500px;
+  border-radius: 500px;
  }
  </style>
 

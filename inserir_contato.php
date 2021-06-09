@@ -32,39 +32,51 @@ if(isset($_POST["inserir"]))
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<style>
+body 
+{
+	background-color:#212529;
+}
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sem título</title>
+<title>Cadastro de Contatos</title>
 </head>
 
 <body>
-<h1>INSERIR CONTATO</h1>
+<h3 style="margin-left:500px; color:#FFFFFF">INSERIR CONTATO</h3>
 <ul>
-	<li><a href="contatos.php">Listar Contatos</a></li>
+<a href="contatos.php"style="margin-left:500px; color:#FFFFFF">Listar Contatos</a>
 </ul>
 
 
-<form id="form_agenda" name="form_agenda" method="post" action="">
+<form id="form_agenda" name="form_agenda" method="post" action=""style="margin-left:500px">
   <p>
     <label for="nome">Nome:</label>
     <input type="text" name="nome" id="nome" />
-    <br />
+    <br/>
 	<label for="sobrenome">Sobrenome:</label>
   	<input type="text" name="sobrenome" id="sobrenome" />
-    <br />
+    <br/>
     <label for="email">Email:</label>
     <input type="text" name="email" id="email" />
-    <br />
+    <br/>
     <label for="telefone">Telefone</label>
     <input type="text" name="telefone" id="telefone" />
+	<br/>
     <label for="celular">Celular</label>
     <input type="text" name="celular" id="celular" />
-    <br />
-    <input type="submit" name="inserir" id="inserir" value="Inserir" />
+    <br/>
+    <input type="submit" style="border-radius:10px" name="inserir" id="inserir" value="Inserir" />
 <br/>
 </p>
 </form>
-
-
+<style>
+body 
+{
+	background-color:#212529;
+	color:#FFFFFF;
+}
+</style>
 
 </body>
 </html>

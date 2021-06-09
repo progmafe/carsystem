@@ -40,10 +40,9 @@
 </head>
 <body>
 
-	<h4 style="margin-left: 100">Sobre</br><h4>
-	<h6 style="margin-left: 100; margin-right: 50px; ">	
-	HISTÓRIA DA ETEC FERNANDO PRESTES
-	</br></br>
+	<h4 style="margin-left: 640">Sobre</br><h4>
+	<h6 style="margin-left: 30; margin-right: 30px; text-align:center">	História da ETEC Fernando Prestes
+ </br></br>
   A “Fernando Prestes” foi criada pela Lei 1860, de 30.12.1921 e instalada em 09 de junho de 1929, 
   com a denominação de “Escola Profissional Secundária Mista de Sorocaba”, atualmente Escola Técnica Estadual “Fernando Prestes”. 
   Teve como primeiros cursos implantados os de artes domésticas, 
@@ -52,14 +51,6 @@
   Em 1931 passa a ser denominada Escola Profissional Mista Cel. 
   Fernando Prestes.
   Ao longo dos anos muitas reformulações aconteceram em função das legislações e de mudanças de prédios. 
-  “E em 1948 era feita a mudança para o amplo prédio agora próprio, e bem conhecido em nossos dias, à Av. Pereira Inácio”
-  atualmente onde está localizada a Escola Técnica Estadual “Rubens de Faria e Souza”, oriunda de reformulações,
-  tendo como origem a Escola “Fernando Prestes”.
-  No final da década de sessenta é desalojada de seu prédio próprio para dar lugar ao Colégio Técnico Industrial Prof. Rubens de Faria e Souza, 
-  com cursos técnicos de 2º grau e passa a funcionar como Ginásio Industrial “Fernando Prestes” no atual campus Seminário da Universidade de Sorocaba – UNISO.
-  Novas mudanças aconteceriam, passando a ser a partir de 1982, em novo prédio,
-  o atual, à Rua Natal, 340, Jardim Paulistano, o Centro Estadual Interescolar “Fernando Prestes”. 
-  Uma experiência que não deu certo, pelo menos em Sorocaba. 
   O Centro Interescolar era uma escola de pré-profissionalização que oferecia cursos para os alunos da rede pública
   e privada que cursavam o ensino de 1º e 2º graus e vinham ali em horário diferentes dos seus cursos regulares para ter uma iniciação para o trabalho. 
   No caso do “Fernando Prestes” também funcionavam os cursos de 1º grau e os cursos técnicos de 2º grau.
@@ -84,7 +75,7 @@
   Ao longo do tempo a escola passou por diversas transformações, 
   resultantes das mudanças de legislação, de estrutura e de prédios. 
   Muitos profissionais se formaram na Escola Técnica, o espírito de pioneirismo e de dedicação de muitos que aqui trabalharam, acreditamos,
-  vive até hoje no “Fernando Prestes”. <h6>
+  vive até hoje no “Fernando Prestes”. 
 
 </body>
 </html>

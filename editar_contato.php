@@ -1,6 +1,7 @@
 ﻿<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
 <?php
 error_reporting(0);
@@ -9,7 +10,6 @@ ini_set(“display_errors”, 0 );
 
 <?php
 require_once('conexao.php');
-
 
 if(isset($_GET["id_contato"])) 
 {
@@ -21,8 +21,6 @@ elseif(isset($_POST["id_contato"]))
 }	
 else
 echo "ERRO";
-
-
 
 	$query_select_contato_id="SELECT * FROM tb_contatos WHERE id_contato=$id_contato";
 	$sql_select_contato_id=mysql_query($query_select_contato_id);
@@ -66,13 +64,7 @@ echo "ERRO";
 	}
 if(isset($_POST['submit_deletar']))
 	{
-	
-  
-	
   $id_contato=$_GET["id_contato"];
-
-  //$query="DELETE FROM tb_contatos WHERE id_contato={$_GET['id_contato']}";
-
   $query="DELETE FROM tb_contatos WHERE id_contato=$id_contato";
   $sql=mysql_query($query);
   
@@ -86,7 +78,6 @@ if(isset($_POST['submit_deletar']))
 	exit;
   }
 }
-
 	    
 ?>
 
@@ -96,40 +87,45 @@ if(isset($_POST['submit_deletar']))
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Edição de Contatos</title>
 </head>
-
 <body>
-<h1>INSERIR CONTATO<br />
-  <br />
+
+<h3 style="margin-left:500">EDITAR CONTATO<br/>
+<br/>
 </h1>
 <ul>
-	<li><a href="contatos.php">Listar contatos</a></li>
+<a href="contatos.php" style="margin-left:500; color:#FFFFFF">Listar contatos</a>
 </ul>
 
-
-<form id="form_agenda" name="form_agenda" method="post" action="">
+<form id="form_agenda" name="form_agenda" method="post" action="" style="margin-left:500">
   <p>
     <input type="hidden" name="id_contato" value="<?php echo $id_contato;?>"/>
     <label for="nome">Nome:</label>
-    <input type="text" name="nome" id="nome" value="<?php echo $nome;?>"/>
-    <br />
+    <input type="text" style="border-radius:10px" name="nome" id="nome" value="<?php echo $nome;?>"/>
+    <br/>
 	<label for="sobrenome">Sobrenome:</label>
-  	<input type="text" name="sobrenome" id="sobrenome" value="<?php echo $sobrenome;?>"/>
-    <br />
+  	<input type="text" style="border-radius:10px" name="sobrenome" id="sobrenome" value="<?php echo $sobrenome;?>"/>
+    <br/>
     <label for="email">Email:</label>
-    <input type="text" name="email" id="email" value="<?php echo $email;?>"/>
-    <br />
+    <input type="text" style="border-radius:10px; width:250px" name="email" id="email" value="<?php echo $email;?>"/>
+    <br/>
     <label for="telefone">Telefone</label>
-    <input type="text" name="tel" id="telefone" value="<?php echo $tel;?>" />
+    <input type="text" style="border-radius:10px" name="tel" id="telefone" value="<?php echo $tel;?>" />
+	<br/>
     <label for="celular">Celular</label>
-    <input type="text" name="cel" id="celular" value="<?php echo $cel;?>"/>
-    <br />
-    <input type="submit" name="submit_editar" id="editar" value="Gravar" />
-     <input type="submit" name="submit_deletar" id="deletar" value="Deletar" />
-<br />
+    <input type="text" style="border-radius:10px" name="cel" id="celular" value="<?php echo $cel;?>"/>
+    <br/>
+    <input type="submit" style="border-radius:10px" name="submit_editar" id="editar" value="Gravar" style="background-color:#FFFFFF"/>
+    <input type="submit" style="border-radius:10px" name="submit_deletar" id="deletar" value="Deletar" style="background-color:#FFFFFF"/>
+<br/>
   </p>
 </form>
-
-
-
+<style>
+body 
+{
+	font-size: 18px;
+	background-color:#212529;
+	color:#FFFFFF;
+}
+</style>
 </body>
 </html>

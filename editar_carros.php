@@ -1,6 +1,7 @@
 ﻿<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
 <?php
 error_reporting(0);
@@ -65,13 +66,9 @@ echo "ERRO";
      {
 		while($array_select_carros=mysql_fetch_array($sql_select_carros1))
 			{
-			
 				$placa1=$array_select_carros["placa"];
 					if ($placa1==$placa)
-					 $totplaca=$totplaca+1;
-						
-				 
-
+					 $totplaca=$totplaca+1; 
 			}
 if($placa!=$PLACA_V)
 {
@@ -102,11 +99,7 @@ if($placa!=$PLACA_V)
 }	 
 if(isset($_POST['submit_deletar']))
 	{
-	
-  
-	
   $id_contato=$_GET["id_carros"];
-  //$query="DELETE FROM tb_contatos WHERE id_contato={$_GET['id_contato']}";
   $query="DELETE FROM tb_carros WHERE id_carros=$id_carros";
   $sql=mysql_query($query);
   
@@ -119,9 +112,7 @@ if(isset($_POST['submit_deletar']))
 	echo"<script type=\"text/javascript\">alert('FALHA AO DELETAR, ENTRE EM CONTATO COM O ADMINISTRADOR DO SITE');</script>";    
 	exit;
   }
-}
-
-	    
+}	    
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -131,35 +122,31 @@ if(isset($_POST['submit_deletar']))
 <title>Edição de cadastro de carros</title>
 
 <style type="text/css">
- 
    .txtarea {
-	background-color: #87CEFF;
-    height: 20px;
-    width: 300px;
-	
-	
+	background-color: #FFFFFF;
+    height: 30px;
+    width: 250px;	
+	border-radius: 10px;
+	font-size:18px;
 }
-
    .selecionar {
-   background-color: #87CEFF;
-    height: 20px;
-    width: 220px;
-	
-	
+   background-color: #FFFFFF;
+    height: 30px;
+    width: 160px;	
+	border-radius: 10px;
+	font-size: 18px;
 }
- 
 </style>
+
 </head>
-
 <body>
-<h3>EDITAR CARRO<br />
-  <br />
+<h3 style="margin-left:500">EDITAR CARRO<br />
+  <br/>
 </h3>
-  <a href="carros.php" onclick="return confirm('Deseja listar carros?');">Mostrar Carros Cadastrados</a></li> 
+  <a href="carros.php" style="color:#FFFFFF; margin-left:500" onclick="return confirm('Deseja listar carros?');">Mostrar Carros Cadastrados</a></li> 
+ <br/><br/>
  
- 
-
-<form id="form_carros" name="form_carros" method="post" action="">
+<form id="form_carros" name="form_carros" method="post" action="" style="margin-left:500">
   <p>
     <input type="hidden" name="id_carros"   value="<?php echo $id_carros;?>"/>
     <label for="placa">Placa</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -170,16 +157,14 @@ if(isset($_POST['submit_deletar']))
   	<input type="text" name="cor" id="cor" required="required"  pattern="[A-Z\s]+$" CLASS="txtarea" value="<?php echo $cor;?>"/>
     <br />  
     <label for="marca">Marca</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" name="marca" id="marca" required="required"     CLASS="txtarea" value="<?php echo $marca;?>"/>
+    <input type="text" name="marca" id="marca" required="required" CLASS="txtarea" value="<?php echo $marca;?>"/>
     <br /> 
 	<label for="montadora">Montadora</label>&nbsp;&nbsp;&nbsp; 
     <input type="text" name="montadora" id="montadora" required="required"  pattern="[A-Z\s]+$" CLASS="txtarea" value="<?php echo $montadora;?>"/>
     <br />
 	
-	
-	
-    <label for="combustivel">Combustivel</label>
-	<font style="background-color: #668B8B;font-size: 16px  ">
+    <label for="combustivel">Combustível</label>
+	<font style="background-color: #212529; font-size: 18px  ">
 	 <?php echo $combustivel;?>  </font> &nbsp;&nbsp;&nbsp;
 	<select name="combustivel" id="combustivel" CLASS="selecionar">
 	         <option value="Gasolina">Gasolina</option>
@@ -193,24 +178,18 @@ if(isset($_POST['submit_deletar']))
     <input type="text" name="ano" id="ano" CLASS="txtarea"  value="<?php echo $ano;?>"/>
     <br />
 	
-    <p style="color: #ff3044;    font-size: 16px  "></p>
+    <p style="color: #00FF00; font-size: 18px"></p>
 	<label for=""></p> Nome:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<font style="background-color: #668B8B;font-size: 16px  ">
+	<font style="background-color: #212529; font-size: 18px">
 	<?php
       
 		$query_select_achacontato="SELECT id_contato,nome FROM tb_contatos where id_contato=$id_contatos";
 		$sql_select_achacontato=mysql_query($query_select_achacontato);
 		while($array_select_achacontato=mysql_fetch_array($sql_select_achacontato))
 			  
-			  {
-					
-					
-					
-					 
+			  { 
 					$mostranome	=$array_select_achacontato["nome"];
 					echo $mostranome;
-               
-			 
 				}
 			   
 	  ?>
@@ -228,33 +207,32 @@ if(isset($_POST['submit_deletar']))
 			{
 			   while($array_select_contatos=mysql_fetch_array($sql_select_contatos))
 			  
-			  {
-					
-					
-					
-					 
+			  { 
 					$id_contato=$array_select_contatos["id_contato"];
 					$nome=$array_select_contatos["nome"];
 					echo '<option value="'; echo  $array_select_contatos["id_contato"]; 
 					echo '">'; echo $array_select_contatos["nome"];
                     echo '</option>';
-					
-               
-			 
 				}
 			   
 			}
       echo '</select> '; echo '<br>'; ?>
 
-    <br />
+    <br/>
 	
-    <input type="submit" name="submit_editar" id="editar" value="Gravar" onclick="return confirm('Deseja gravar carros?');"/>
-     <input type="submit" name="submit_deletar" id="deletar" value="Deletar" />
-<br />
+    <input type="submit" style="border-radius:10px" name="submit_editar" id="editar" value="Gravar"  style="background-color:#FFFFFF" onclick="return confirm('Deseja gravar carros?');"/>
+    <input type="submit" style="border-radius:10px" name="submit_deletar" id="deletar" value="Deletar"  style="background-color:#FFFFFF"/>
+<br/>
   </p>
 </form>
 
-
+<style>
+body 
+{
+	background-color:#212529;
+	color:#FFFFFF;
+}
+</style>
 
 </body>
 </html>
